@@ -9,24 +9,22 @@ from fabric.api import *
 env.user = 'lee.98a'
 env.warn_only = True # not abort by default, but warn only and move on to stopall: with settings(warn_only=True):
 env.roledefs = {
-  'prd': ['emsqlprd01', 'fnsqlprd01'],
-  'drrpt': ['emsqlprd02', 'fnsqlprd02', 'fnsqlprd03'],
-  'tst': ['emsqltst01', 'emsqltst02', 'fnsqltst01', 'fnsqltst02', 'fnsqltst03'],
-  'tst23': ['emsqltst02', 'fnsqltst02', 'fnsqltst03'],
-  'tst1': ['emsqltst01', 'fnsqltst01'],
+  'prd': ['prd01', 'prd01'],
+  'drrpt': ['prd02', 'prd02', 'prd03'],
+  'tst': ['tst01', 'tst02', 'tst01', 'tst02', 'tst03'],
+  'tst23': ['tst02', 'tst02', 'tst03'],
+  'tst1': ['tst01', 'tst01'],
   'dmo': ['NO_SERVER'],
 }
 
 # Add custom global variables: use it in pythonic syntax!
 # ps db list -- took out em8stg, fn8stg 
 env.dblst = {
-  'prd': ['fnosu','emosu'],
-  'drrpt': ['fnrpt','fn8trn', 'fn8trn1', 'fn8trn2', 'fn8trn3'],
-  'tst': ['fn8dmo','fn8dev2','fn8qa2','fn8qad','em8dmo','em8dev2','em8qa2',
-          'fn8qa','fn8qap','fn8dev','fn8devp','em8dev','em8qa'],
-  'tst23': ['fn8dmo','fn8dev2','fn8qa2','fn8qad','em8dmo','em8dev2','em8qa2'],
-  'tst1':  ['fn8qa','fn8qap','fn8dev','fn8devp','em8dev','em8qa'],
-  'dmo':  ['fn8dmo'],
+  'prd': ['fno','emo'],
+  'drrpt': ['fnr','trn', 'trn1', 'trn2', 'trn3'],
+  'tst': ['dmo','ev2','qa2','qad','dmo','dev2','qa2',
+          'qa','qap','dev','devp','dev','qa'],
+   'dmo':  ['dmo'],
 }
 #============ python functions below ===========
 def pslst():
