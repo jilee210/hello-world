@@ -22,33 +22,26 @@ from fabric.api import *
 env.user = 'lee.98a'
 env.warn_only = True # not abort by default, but warn only and move on to stopall: with settings(warn_only=True):
 env.roledefs = {
-  'prd': ['emsqlprd01', 'fnsqlprd01'],
-  'drrpt': ['emsqlprd02', 'fnsqlprd02', 'fnsqlprd03'],
-  'tst': ['emsqltst01', 'emsqltst02', 'fnsqltst01', 'fnsqltst02', 'fnsqltst03'],
-  'tst23': ['emsqltst02', 'fnsqltst02', 'fnsqltst03'],
-  'tst1': ['emsqltst01', 'fnsqltst01'],
+  'prd': ['fnprd01', 'emprd01'],
+  'drrpt': ['emprd02', 'fnprd02', 'fnprd03'],
+  'tst': ['emtst01', 'emtst02', 'fntst01', 'fntst02', 'fntst03'],
+  'tst23': ['sqltst02', 'sqltst02', 'sqltst03'],
+  'tst1': ['fsqltst01', 'eqltst01'],
   'dmo': ['NO_SERVER'],
 }
 
 # Add custom global variables: use it in pythonic syntax!
 # ps db list
 env.dblst = {
-  'prd': ['fnosu','emosu'],
-  'drrpt': ['fnrpt','fn8trn', 'fn8trn1', 'fn8trn2', 'fn8trn3'],
-  'tst': ['fn8dmo','fn8stg','fn8dev2','fn8qa2','fn8qad','em8dmo','em8stg','em8dev2','em8qa2',
-          'fn8qa','fn8qap','fn8dev','fn8devp','em8dev','em8qa'],
-  'tst23': ['fn8dmo','fn8stg','fn8dev2','fn8qa2','fn8qad','em8dmo','em8stg','em8dev2','em8qa2'],
-  'tst1':  ['fn8qa','fn8qap','fn8dev','fn8devp','em8dev','em8qa'],
-  'dmo':  ['fn8dmo'],
+  'tst23': ['dmo','stg'],
+  'tst1':  ['fn','ema'],
+  'dmo':  ['dmo'],
 }
 # dg db list
 env.dglst = {
-  'prd': ['fnosu0','emosu0'],
-  'drrpt': ['fnosu0','emosu0'],
-  'tst': ['fn8qa0','em8qa0'],
-  'tst1': ['fn8qa0','em8qa0'],
-  'tst23': ['fn8qa0','em8qa0'],
-  'dmo':  ['fn8qa0'],
+  'tst1': ['eqa0','fqa0'],
+  'tst23': ['fnx','emy'],
+  'dmo':  ['xyz0'],
 }
 
 # DO NOT use env.hosts except in a fixed case, which overwrites -H option in command line, it is better to user -R with roledefs
