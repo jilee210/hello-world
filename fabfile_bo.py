@@ -23,33 +23,28 @@ import commands as c # stty echo with ThreadPool not hanging but stty echo neede
 #__all__ = ['chk_alert'] # still env imported
 #__all__ = [] # No export at all but env imported
 #========================================
-env.user = 'lee.98a'
+env.user = 'lee.98'
 env.warn_only = True # not abort by default, but warn only and move on to stopall: with settings(warn_only=True):
 env.roledefs = {
-  'prd': ['wasqlprd01', 'wasqlprd03', 'wasqlprd02'],
-  'tst': ['wasqltst01', 'wasqltst02', 'wasqltst03'],
-  'tst1': ['wasqltst01'],
-  'tst2': ['wasqltst02'],
-  'tst3': ['wasqltst03'],
-  'dmo': ['wasqltst01'],
+  'tst': ['tst01', 'tst02', 'tst03'],
+  'dmo': ['tst01'],
 }
 # custom patch db list
 env.dblst = {
-  'prd': ['waosu0','wahrosu0'],
-  'tst': ['wsdev','wsqa','wapt','wahrpt'],
-  'tst1':  ['wsdev'],
-  'tst2':  ['wsqa'],
-  'tst3':  ['wapt','wahrpt'],
-  'dmo':  ['wsdev'],
+  'prd': ['osu1','osu0'],
+  'tst': ['dev','qa','pt','hrpt'],
+  'tst1':  ['dev'],
+  'tst2':  ['qa'],
+  'tst3':  ['pt','hrpt'],
+  'dmo':  ['dev'],
 }
 # for patch_db execute for multiple hosts case as well as a single host # TODO 
 env.host_dblst = {
-  'wasqltst01': ['wsdev'],
-  'wasqltst02': ['wsqa'],
-  'wasqltst03': ['wapt','wahrpt'],
-  'wasqlprd01': ['waosu0'],
-#  'wasqlprd02': ['waosu9','wahrosu9'],
-  'wasqlprd03': ['wahrosu0']
+  'tst01': ['dev'],
+  'tst02': ['qa'],
+  'tst03': ['pt','hrpt'],
+  'prd01': ['osux'],
+  'prd03': ['osuy']
 }
 
 #### patch_home_bo select prompt not showing due to this!!! localize? or debug or tee to a logfile if need for now
